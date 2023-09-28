@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pi Project inf_ef6 2023</title>
+   </head>
+   <body>
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <nav>
+         <h1>Flaskr</h1>
+         <ul>
+            <li><a href="{{ url_for('live_photos') }}">LivePhotos</a></li>
+            {% if g.user %}
+            <li><span>{{ g.user['username'] }}</span></li>
+            <li>a</li>
+            {% else %}
+            <li>b</li>
+            <li>b</li>
+            {% endif %}
+         </ul>
+      </nav>
+   </body>
+</html>
+

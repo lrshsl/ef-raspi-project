@@ -19,5 +19,7 @@ The goal of this project is to make it possible to create time lapse videos with
     - If using with GUI, display it there
 
 
+I now decided to write a website, hosted on the pi, which solves the problems.
+
 
 
