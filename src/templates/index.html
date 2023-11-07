@@ -10,16 +10,30 @@
       <nav>
          <h1>Flaskr</h1>
          <ul>
-            <li><a href="{{ url_for('live_photos') }}">LivePhotos</a></li>
+            <li><a href="{{ url_for('live_photos') }}">Camera Preview</a></li>
             {% if g.user %}
-            <li><span>{{ g.user['username'] }}</span></li>
-            <li>a</li>
+               <li><a href="{{ url_for('index') }}"></a></li>
+               <li>a</li>
             {% else %}
-            <li>b</li>
-            <li>b</li>
+            <li><a href="{{ url_for('settings') }}">Settings</a></li>
+               <li>b</li>
             {% endif %}
          </ul>
       </nav>
+
+      <form action="submit_start_recording" method="POST" accept-charset="utf-8">
+         <button type="submit">Start recording</button>
+      </form>
+
+      <!--- Print Messages --->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+         {% for category, message in messages %}
+            <script>alert('{{ category }}: {{ message }}')</script>
+         {% endfor %}
+      {% endif %}
+      {% endwith %}
+
    </body>
 </html>
 

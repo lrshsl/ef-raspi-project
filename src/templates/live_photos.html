@@ -8,17 +8,18 @@
    <body>
       <h1>Pi Photos Live</h1>
 
-      {% if config.live_photo_path %}
+      {% if session.live_photo_path %}
          <form action="/filedialog" method="POST">
-            <span>File location, from where the photo is read: {{ config.live_photo_path }}</span><br><br>
+            <span>The photos are stored under: {{ session.live_photo_path }}</span><br><br>
             <label for="filedialog">Choose a file:</label>
             <input id="filedialog" type="submit" value="Choose file">
          </form>
-         <img src="{{ config.live_photo_path }}">
       {% else %}
          <p>Error: No image path received</p>
       {% endif %}
 
+      <h2>Live Stream</h2>
+      <img src="{{ url_for('video_feed') }}" width="640" height="480">
    </body>
 </html>
 
