@@ -1,0 +1,2 @@
+
+CAMERA_PIN = 3

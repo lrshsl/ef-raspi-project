@@ -9,6 +9,9 @@
 
    <h1>Settings</h1>
    <form action="settings_submit" method="post" accept-charset="utf-8">
+      <label for="file_chooser">Save directory</label>
+      <input type="file" name="file_chooser" id="file_chooser" value="{{ config['records_save_directory'] }}"><br>
+
       <label for="interval_sec">Interval in seconds</label>
       <input type="number" name="interval_sec" id="interval_sec" value="{{ config['default_interval_seconds'] }}"><br>
 
@@ -18,7 +21,7 @@
       <input type="submit" value="Submit">
    </form>
 
-   <!--- Print Messages --->
+   <!--- Print Messages -->
    {% with messages = get_flashed_messages(with_categories=true) %}
    {% if messages %}
       {% for category, message in messages %}
