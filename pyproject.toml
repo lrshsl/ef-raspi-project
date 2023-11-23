@@ -1,0 +1,14 @@
+
+[project]
+name = "rasp_cam"
+version = "0.1.0"
+description = "A flask app to configure a timelapse camera on a raspberry pi"
+dependencies = [
+    "flask",
+    "numpy",
+    "picamera",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

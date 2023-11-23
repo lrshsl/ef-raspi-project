@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Union
 import time
 
 class PiCamera_MockBase:
@@ -29,9 +29,9 @@ class PiCamera(PiCamera_MockBase):
         self.photos_id += 1
 
     async def take_photos_async(self,
-                                period_length: int | float = 5,         # Default: all 5 seconds a photo
-                                duration: int | float = float('inf'),   # Until interrupted. Not used, if nphotos is provided
-                                nphotos: Optional[int]=None):           # Maximum number of photos to be taken
+                                period_length: Union[int, float] = 5,       # Default: all 5 seconds a photo
+                                duration: Union[int, float] = float('inf'), # Until interrupted. Not used, if nphotos is provided
+                                nphotos: Optional[int]=None):               # Maximum number of photos to be taken
         if nphotos is not None:
             duration = nphotos * period_length
 
