@@ -111,6 +111,7 @@ if __name__ == "__main__":
         fn()
         time_taken = time.time() - start_time
         print(f"fn {i}: {time_taken}")
+
     print("\n# for n in range(100_000): 2 ** n #")
     for i, fn in enumerate(calc_fns):
         start_time = time.time()
@@ -136,6 +137,7 @@ if __name__ == "__main__":
     print(f"Threads: {t}\n")
     t = multiprocessing_time(calc_fns)
     print(f"Processes: {t}\n")
+
 
 
 
