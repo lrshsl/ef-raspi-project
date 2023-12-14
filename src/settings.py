@@ -13,7 +13,7 @@ def load_settings():
     """
     Load settings from environment variables
     """
-    global images_folder, camera_port, timelapses_folder, on_raspberry_pi
+    global images_folder, camera_port, timelapses_folder, on_raspberry_pi, interval_minutes, recording_duration_minutes
 
     # Not optional: ON_RASPBERRY_PI
     on_pi = os.getenv('ON_RASPBERRY_PI')
@@ -38,9 +38,15 @@ def load_settings():
         # No default, needs to be set explicitly
         raise Exception('CAMERA_PORT not set')
 
-    interval_minutes = os.getenv('INTERVAL_MINUTES')
-    assert interval_minutes is not None, 'INTERVAL_MINUTES not set'
+    int_min = os.getenv('INTERVAL_MINUTES')
+    assert int_min is not None, 'INTERVAL_MINUTES not set'
+    interval_minutes = float(int_min)
 
     recording_duration_minutes = os.getenv('RECORDING_DURATION_MINUTES')
     assert recording_duration_minutes is not None, 'RECORDING_DURATION_MINUTES not set'
+    recording_duration_minutes = float(recording_duration_minutes)
+
+
+load_settings()
+
 

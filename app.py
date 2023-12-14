@@ -2,7 +2,7 @@ import os
 import flask
 import dotenv
 
-from src import main_state, camera, settings, utils
+from src import camera, settings, utils
 
 
 def create_app():
